@@ -6,16 +6,16 @@ pool:
 
 steps:
 
-# 1️⃣ Install Node.js
 - task: NodeTool@0
   inputs:
-    versionSpec: '18.x'
-  displayName: 'Install Node.js'
+    versionSpec: '20.x'
+  displayName: 'Install Node.js 20'
 
-# 2️⃣ Install dependencies
+- script: node -v
+  displayName: 'Check Node Version'
+
 - script: npm install
   displayName: 'Install Dependencies'
 
-# 3️⃣ Build project
 - script: npm run build
   displayName: 'Build Project'
